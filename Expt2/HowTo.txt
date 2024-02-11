@@ -13,20 +13,20 @@ gcc bully_ws.c -o bws
 //run bws and enter number of processes and which is alive/dead and which starts election.
 
 //for ring.c 
-gcc ring.c -o ring
+gcc ring.c -o ring.out
 //create 3 terminals first then give the following comments
-./ring 1 3
-./ring 2 3
-./ring 3 3
+./ring.out 1 3
+./ring.out 2 3
+./ring.out 3 3
 //once 3rd one is created give 1 in 3rd one, then after some time kill 3rd one , then after sometime give 1 in 2nd one to get 1 1 , 1 2
 
 //for ring2.c 
-gcc ring2.c -o ring2
+gcc ring2.c -o ring2.out
 //create 4 terminals
-./ring2 8001 0 8002
-./ring2 8002 0 8003
-./ring2 8003 0 8000
-./ring2 8000 1 8001
+./ring2.out 8001 0 8002
+./ring2.out 8002 0 8003
+./ring2.out 8003 0 8000
+./ring2.out 8000 1 8001
 
 //for ring_ws.c
 gcc ring_ws.c -o rws
