@@ -1,4 +1,4 @@
-sudo apt-get install rpcgen
+sudo apt-get install rpcbind
 rpcinfo
 // create add.x
 rpcgen -a -C add.x
