@@ -1,0 +1,8 @@
+sudo apt-get install rpcbind
+rpcinfo
+// create add.x
+rpcgen -a -C add.x
+// edit add_server.c and add_client.c
+make -f Makefile.add
+sudo ./add_server
+sudo ./add_client localhost 2 3
