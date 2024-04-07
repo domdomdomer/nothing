@@ -1,0 +1,19 @@
+HELLO
+mpicc –o hello hello.c
+mpiexec –n 4 ./hello
+
+MATRIX BROADCAST
+mpicc -o matrixb matrix_bcast.c
+mpirun -np 3 matrixb
+
+PI BROADCAST
+mpicc -o pib pi_bcast.c
+mpirun -np 200 --oversubscribe pib
+
+MATRIX POINT-TO-POINT
+mpicc -o matrixptp matrix_ptp.c
+mpirun -np 3 matrixptp
+
+PI POINT-TO-POINT
+mpicc -o piptp pi_ptp.c
+mpirun -np 200 --oversubscribe piptp
