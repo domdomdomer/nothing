@@ -1,0 +1,120 @@
+BULLY:
+gcc Bully.c -o bully 
+./bully
+------------------------OUTPUT----------------------------
+Enter no. of process::3
+
+Enter Process 1 is Alive or not(0/1)::1
+
+Enter Process 2 is Alive or not(0/1)::1
+
+Enter Process 3 is Alive or not(0/1)::0
+
+Processes-->     1       2       3
+Alive-->         1       1       0
+coordinator is::2
+BULLY ALGORITHM
+
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::1
+
+Enter Process no. to Crash::2
+
+Enter election generator id::2
+
+enter a valid generator id::
+Enter election generator id::1
+
+message is sent from 1 to 2
+message is sent from 1 to 3
+Processes-->     1       2       3
+Alive-->         1       0       0
+coordinator is::1
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::2
+
+Enter Process no. to Activated::3
+
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::3
+
+Processes-->     1       2       3
+Alive-->         1       0       1
+coordinator is::3
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::4
+------------------------OUTPUT----------------------------
+
+RING
+gcc Ring.c -o ring 
+./ring 
+------------------------OUTPUT----------------------------
+Enter no. of process::3
+
+Enter Process 1 is Alive or not(0/1)::1
+
+Enter Process 2 is Alive or not(0/1)::1
+
+Enter Process 3 is Alive or not(0/1)::1
+
+Processes-->     1       2       3
+Alive-->         1       1       1
+coordinator is::3
+RING ALGORITHM
+
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::1
+
+Enter Process no. to Crash::1
+
+Enter election generator id::3
+
+enter a valid generator id::
+Processes-->     1       2       3
+Alive-->         0       1       1
+coordinator is::3
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::2
+
+Enter Process no. to Activated::1
+
+message is sent from 1 to 2
+Response is sent from 2 to 1
+message is sent from 1 to 3
+Response is sent from 3 to 1
+Processes-->     1       2       3
+Alive-->         1       1       1
+coordinator is::3
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::3
+
+Processes-->     1       2       3
+Alive-->         1       1       1
+coordinator is::3
+1.Crash
+2.Activate
+3.Display
+4.Exit
+Enter You choice::4
+------------------------OUTPUT----------------------------
