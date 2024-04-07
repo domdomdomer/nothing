@@ -1,0 +1,94 @@
+PROBE:
+gcc Probe.c -o probe 
+./probe 
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+Enter number of processes: 5
+Which processes is process-1 holding? (Enter -1 if none): 2
+How many processes is process-1 waiting for? : 1
+Enter the IDs of the processes process-1 is waiting for: 3
+Which processes is process-2 holding? (Enter -1 if none): 3
+How many processes is process-2 waiting for? : 2
+Enter the IDs of the processes process-2 is waiting for: 4 1 
+Which processes is process-3 holding? (Enter -1 if none): 1
+How many processes is process-3 waiting for? : 2
+Enter the IDs of the processes process-3 is waiting for: 5 2
+Which processes is process-4 holding? (Enter -1 if none): 2
+How many processes is process-4 waiting for? : -1
+Enter the IDs of the processes process-4 is waiting for: Which processes is process-5 holding? (Enter -1 if none): 3
+How many processes is process-5 waiting for? : -2
+Enter the IDs of the processes process-5 is waiting for: Process id that initiates probe : 1
+Process-1 sends message (1,1,3)
+Process-3 sends message (1,3,5)
+Process-3 sends message (1,3,2)
+Process-2 sends message (1,2,4)
+Process-2 sends message (1,2,1)
+Deadlock detected
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+
+WAIT FOR GRAPH:
+gcc wfg.c -o wfg
+./wfg
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+Enter the number of resources: 3
+Enter the processes that are allocated resources (Enter -1 to stop):
+Process: 1
+Resource: 1
+Process: 2
+Resource: 2
+Process: 3
+Resource: 3
+Process: -1
+Enter the processes that are waiting for resources (Enter -1 to stop):
+Process: 1
+Resource: 2
+Process: 2
+Resource: 3
+Process: 3
+Resource: 1
+Process: -1
+Deadlock detected!
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+
+CENTRALIZED DEADLOCK DETECTION
+gcc Centralizeddeadlock.c -o central
+./central 
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+No. of resources in site 1: 3
+No. of resources in site 2: 1
+
+Resources in site 1:
+0 1 2 
+Resources in site 2:
+3 
+
+Enter number of processes: 3
+What resource is process-0 holding? (Enter -1 for none): 1
+What resource is process-0 waiting for? (Enter -1 for none): 2
+What resource is process-1 holding? (Enter -1 for none): 2
+What resource is process-1 waiting for? (Enter -1 for none): 1
+What resource is process-2 holding? (Enter -1 for none): -1
+What resource is process-2 waiting for? (Enter -1 for none): -1
+Deadlock detected in site 1
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+
+DISTRIBUTED DEADLOCK DETECTION
+gcc Distributeddeadlock.c -o distribute
+./distribute
+----------------------------------------------------------OUTPUT---------------------------------------------------------
+Enter the number of processes: 5
+Enter the number of resources: 3
+Enter the available resources: 3 3 2
+Enter the maximum resources for each process:
+Process 0: 7 5 3
+Process 1: 3 2 2 
+Process 2: 9 0 2
+Process 3: 2 2 2
+Process 4: 4 3 3
+Enter the allocated resources for each process:
+Process 0: 0 1 0
+Process 1: 2 0 0
+Process 2: 3 0 2
+Process 3: 2 1 1
+Process 4: 0 0 2
+No deadlock detected
+----------------------------------------------------------OUTPUT---------------------------------------------------------
